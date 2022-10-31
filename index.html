@@ -1,0 +1,17 @@
+---
+layout: gallery
+title: Drawings
+---
+{% assign name = "drawings" %}
+{% assign c = site.collections | where: "label", name | first %}
+{% for f in c.files %}
+{% capture path %}assets/{{ name }}/{{ f.basename }}/320{{ f.extname }}{% endcapture %}
+{% capture original %}assets/{{ name }}/{{ f.basename }}/original{{ f.extname }}{% endcapture %}
+{% capture preview %}assets/{{ name }}/{{ f.basename }}/1280{{ f.extname }}{% endcapture %}
+{% assign fd = page.file_data | where: 'name', preview | first %}
+<li class="gallery-item">
+  <div>
+  </div>
+  <img src="/{{ path }}" data-base="/assets/{{ name }}/{{ f.basename }}" data-extension="{{ f.extname }}" data-original="/{{ original }}" data-width="{{ fd.width }}" data-height="{{ fd.height }}" />
+</li>
+{% endfor %}
