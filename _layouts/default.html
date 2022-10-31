@@ -2,15 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }} | NG Kawaii Crafts</title>
     <link rel="stylesheet" href="/main.css">
     <script src="/assets/js/main.js" ></script>
   </head>
   <body>
     <div id="banner-container">
-      <img src="/assets/images/bird_left.png" />
-      <img src="/assets/images/banner_smaller.png" id="banner"/>
-      <img src="/assets/images/bird_right.png" />
+      <div>
+        <img src="/assets/images/bird_left.png" class="left-align"/>
+      </div>
+      <div>
+        <img src="/assets/images/banner_smaller.png" />
+      </div>
+      <div>
+        <img src="/assets/images/bird_right.png" class="top-align" />
+      </div>
     </div>
     <nav>
       <a href="/">Drawings</a>
@@ -20,12 +26,8 @@
         <a href="https://www.instagram.com/ngkawaiicrafts/">Instagram</a>
       </span>
     </nav>
-    <h1>{{ page.title }}</h1>
     <section>
       {{ content }}
     </section>
-    <footer>
-      &copy; to me
-    </footer>
   </body>
 </html>
