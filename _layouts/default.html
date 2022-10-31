@@ -19,8 +19,16 @@
       </div>
     </div>
     <nav>
+      {% if page.title == "Drawings" %}
+      Drawings
+      {% else %}
       <a href="/">Drawings</a>
-      <a href="/sculptures/">Sculptures</a>
+      {% endif %}
+      {% if page.title == "Sculptures" %}
+      Sculptures
+      {% else %}
+      <a href="/sculptures.html">Sculptures</a>
+      {% endif %}
       <span>
         <a href="https://www.etsy.com/shop/ngkawaiicrafts/">Etsy</a>
         <a href="https://www.instagram.com/ngkawaiicrafts/">Instagram</a>
