@@ -55,7 +55,7 @@ nav > span {
 }
 
 .moving {
-    transition-property: top, left, right, bottom, width, height;
+    transition-property: top, left, right, bottom, width, height, opacity;
     transition-duration: 0.4s;
     transition-timing-function: ease-out;
 }
