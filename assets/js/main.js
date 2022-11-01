@@ -13,6 +13,10 @@ function onLoad() {
     previewRoot.addEventListener("click", removePreview);
     previewRoot.addEventListener("transitionend", onPreviewTransitionDone);
     document.addEventListener("keydown", onPreviewKeyPress);
+    const prevDiv = document.getElementById("zoom-in-prev");
+    const nextDiv = document.getElementById("zoom-in-next");
+    prevDiv.addEventListener("click", onPreviousClicked);
+    nextDiv.addEventListener("click", onNextClicked);
 }
 
 function onThumbnailClick() {
@@ -56,15 +60,24 @@ function onPreviewKeyPress(event) {
     }
 
     if (event.key === "ArrowLeft") {
+        event.preventDefault();
         previousImage();
+        return;
     }
     if (event.key === "ArrowRight") {
+        event.preventDefault();
         nextImage();
+        return;
     }
     if (event.key === "Escape") {
+        event.preventDefault();
         removePreview();
+        return;
     }
-    event.preventDefault();
+    if (event.key === "ArrowUp" || event.key === "ArrowDown" || event.key === "PageUp" || event.key === "PageDown" || event.key === "Home" || event.key === "End") {
+        event.preventDefault();
+        return;
+    }
 }
 
 function previousImage() {
@@ -150,8 +163,29 @@ function onPreviewTransitionDone() {
         previewRoot.classList.add("invisible");
         previewRoot.style.backgroundColor = "rgba(0, 0, 0, 0)";
         previewRoot.style.opacity = 1;
-        while (previewRoot.children.length > 0) {
-            previewRoot.firstElementChild.remove();
+
+        const imgs = [];
+        for (let i = 0; i < previewRoot.children.length; ++i) {
+            if (previewRoot.children[i].tagName === "IMG") {
+                imgs.push(previewRoot.children[i]);
+            }
         }
+        imgs.forEach(img => img.remove());
+
+        // while (previewRoot.children.length > 0) {
+        //     previewRoot.firstElementChild.remove();
+        // }
     }
+}
+
+function onPreviousClicked(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    previousImage();
+}
+
+function onNextClicked(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    nextImage();
 }

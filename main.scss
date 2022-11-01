@@ -112,3 +112,50 @@ nav > span {
     position: absolute;
     object-fit: contain;
 }
+
+#zoom-in-prev, #zoom-in-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+#zoom-in-prev {
+    left: 0;
+}
+
+#zoom-in-next {
+    right: 0;
+}
+
+#zoom-in-prev > div, #zoom-in-next > div {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+    line-height: 80px;
+    font-size: 80px;
+    font-weight: bold;
+    font-family: monospace;
+    cursor: pointer;
+    user-select: none;
+}
+
+.hover-highlight {
+    background-color: rgba(255, 255, 255, 0);
+    transition-property: background-color opacity;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+    opacity: 0;
+}
+
+.hover-highlight:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+}
