@@ -21,9 +21,9 @@ function onLoad() {
 
 function onThumbnailClick() {
     previewCurrentThumbnail = this;
-    console.log(`Thumbnail clicked with base ${previewCurrentThumbnail.dataset.base}`);
+    //console.log(`Thumbnail clicked with base ${previewCurrentThumbnail.dataset.base}`);
     const startRect = previewCurrentThumbnail.getBoundingClientRect();
-    previewMainImg = document.createElement("img");
+    previewMainImg = createPreviewImgElement();
     previewMainImg.classList.add("moving");
     document.getElementById("zoom-in-view").appendChild(previewMainImg);
     const largeHeight = previewCurrentThumbnail.dataset.height;
@@ -48,6 +48,131 @@ function onThumbnailClick() {
     previewMainImg.src = getLargeImageUrl(previewCurrentThumbnail);
     previewRoot.classList.remove("invisible");
     setTimeout(() => previewRoot.style.backgroundColor = "rgba(0, 0, 0, 0.8)", 0);
+}
+
+function createPreviewImgElement()
+{
+    const element = document.createElement("img");
+    element.addEventListener("touchmove", onPreviewTouchMove);
+    element.addEventListener("touchstart", onPreviewTouchStart);
+    element.addEventListener("touchend", onPreviewTouchEnd);
+    element.addEventListener("touchcancel", onPreviewTouchEnd);
+    return element;
+}
+
+function copyTouch({ identifier, pageX, pageY }) {
+    return { identifier, pageX, pageY };
+}
+
+const trackedTouchEvents = [];
+
+function findTouchEvent(id) {
+    for (let i = 0; i < trackedTouchEvents.length; ++i) {
+        if (trackedTouchEvents[i].identifier == id) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+
+let previewAuxImg;
+let touchMoveAuxLargeUrl;
+let touchMoveDirection;
+
+function onPreviewTouchMove(event) {
+    if (event.touches.length > 1 || event.changedTouches.length > 1) {
+        return;
+    }
+
+    for (let i = 0; i < event.changedTouches.length; ++i) {
+        const touch = event.changedTouches[i];
+        let idx = findTouchEvent(touch.identifier);
+        if (idx < 0) {
+            // ???
+            trackedTouchEvents.push(copyTouch(touch));
+            return;
+        } else {
+            const oldTouch = trackedTouchEvents[idx];
+            const dx = touch.pageX - oldTouch.pageX;
+            const dy = touch.pageY - oldTouch.pageY;
+            //console.log(`dx: ${dx}`);
+            let needUpdateUrl = !touchMoveDirection || (Math.sign(dx) != touchMoveDirection);
+            if (needUpdateUrl) {
+                touchMoveDirection = Math.sign(dx);
+                if (dx < 0) {
+                    const prevThumbnail = findElement(previewCurrentThumbnail, elem => elem.tagName === "IMG", elem => getNextThumbnail(elem));
+                    if (prevThumbnail)
+                    {
+                        touchMoveAuxLargeUrl = getLargeImageUrl(prevThumbnail);
+                    } else {
+                        touchMoveAuxLargeUrl = null;
+                    }
+                } else if (dx > 0) {
+                    const nextThumbnail = findElement(previewCurrentThumbnail, elem => elem.tagName === "IMG", elem => getPreviousThumbnail(elem));
+                    if (nextThumbnail) {
+                        touchMoveAuxLargeUrl = getLargeImageUrl(nextThumbnail);
+                    } else {
+                        touchMoveAuxLargeUrl = null;
+                    }
+                } else {
+                    return;
+                }
+                console.log(`New next URL: ${touchMoveAuxLargeUrl}`);
+            }
+            previewMainImg.style.left = `${dx}px`;
+        }
+    }
+}
+
+function onPreviewTouchStart(event) {
+    for (let i = 0; i < event.changedTouches.length; ++i) {
+        const touch = event.changedTouches[i];
+        let idx = findTouchEvent(touch.identifier); //just in case
+        if (idx < 0) {
+            trackedTouchEvents.push(copyTouch(touch));
+            idx = trackedTouchEvents.length - 1;
+        } else {
+            trackedTouchEvents[idx] = copyTouch(touch);
+        }
+    }
+    if (trackedTouchEvents.length > 0) {
+        previewMainImg.classList.remove("moving");
+    }
+}
+
+function onPreviewTouchEnd(event) {
+    let lastStoppedTouch;
+    let lastChangedTouch;
+    for (let i = 0; i < event.changedTouches.length; ++i) {
+        const touch = event.changedTouches[i];
+        let idx = findTouchEvent(touch.identifier);
+        if (idx < 0) {
+            // ???
+        } else {
+            lastStoppedTouch = trackedTouchEvents[idx];
+            lastChangedTouch = touch;
+            trackedTouchEvents.splice(idx, 1);
+        }
+    }
+    if (trackedTouchEvents.length < 1) {
+        previewMainImg.classList.add("moving");
+        touchMoveAuxLargeUrl = null;
+        touchMoveDirection = null;
+        if (lastStoppedTouch) {
+            const dx = lastChangedTouch.pageX - lastStoppedTouch.pageX;
+            if (Math.abs(dx) < 100) {
+                setTimeout(() => {
+                    previewMainImg.style.left = 0;
+                }, 10);
+            } else if (dx < 0) {
+                advanceImage(`${dx - 100}px`, `${dx + 100}px`, getNextThumbnail, "100px", "-100px", true);
+            } else {
+                advanceImage(`${dx + 100}px`, `${dx - 100}px`, getPreviousThumbnail, "-100px", "100px", true);
+            }
+        }
+    }
 }
 
 function getLargeImageUrl(thumbnailElement) {
@@ -88,13 +213,16 @@ function nextImage() {
     advanceImage("-100px", "100px", getNextThumbnail);
 }
 
-function advanceImage(left, right, stepFunction) {
+function advanceImage(left, right, stepFunction, newLeft, newRight, cancelPreviewOnEndOfList) {
     if (!previewCurrentThumbnail) {
         return
     }
 
     const previousImgThumbnail = findElement(previewCurrentThumbnail, elem => elem.tagName === "IMG", elem => stepFunction(elem));
     if (!previousImgThumbnail) {
+        if (cancelPreviewOnEndOfList) {
+            removePreview();
+        }
         return;
     }
 
@@ -105,14 +233,14 @@ function advanceImage(left, right, stepFunction) {
     previewMainImg.style.zIndex = 0;
     previewMainImg.addEventListener("transitionend", function() { this.remove(); });
 
-    previewMainImg = document.createElement('img');
+    previewMainImg = createPreviewImgElement();
     previewMainImg.classList.add("moving");
     document.getElementById("zoom-in-view").appendChild(previewMainImg);
     previewMainImg.src = getLargeImageUrl(previewCurrentThumbnail);
     previewMainImg.style.top = 0;
-    previewMainImg.style.left = right;
+    previewMainImg.style.left = newLeft ? newLeft : right;
     previewMainImg.style.bottom = 0;
-    previewMainImg.style.right = left;
+    previewMainImg.style.right = newRight ? newRight : left;
     previewMainImg.style.width = "100%";
     previewMainImg.style.height = "100%";
     previewMainImg.style.opacity = 0;
@@ -171,10 +299,6 @@ function onPreviewTransitionDone() {
             }
         }
         imgs.forEach(img => img.remove());
-
-        // while (previewRoot.children.length > 0) {
-        //     previewRoot.firstElementChild.remove();
-        // }
     }
 }
 
