@@ -21,21 +21,21 @@
     <nav>
       <div>
         {% if page.title == "Drawings" %}
-        <img src="/assets/images/draw_icon.png">
+        <img src="/assets/images/draw_icon.png" alt="Drawings">
         {% else %}
-        <a href="/"><img src="/assets/images/draw_icon.png"></a>
+        <a href="/"><img src="/assets/images/draw_icon.png" alt="Drawings"></a>
         {% endif %}
       </div>
       <div>
         {% if page.title == "Sculptures" %}
-        <img src="/assets/images/sculpt_icon.png">
+        <img src="/assets/images/sculpt_icon.png" alt="Sculptures">
         {% else %}
-        <a href="/sculptures.html"><img src="/assets/images/sculpt_icon.png"></a>
+        <a href="/sculptures.html"><img src="/assets/images/sculpt_icon.png" alt="Sculptures"></a>
         {% endif %}
       </div>
       <div id="nav-filler"></div>
-      <div><a href="https://www.etsy.com/shop/ngkawaiicrafts/"><img src="/assets/images/etsy_icon.png"></a></div>
-      <div><a href="https://www.instagram.com/ngkawaiicrafts/"><img src="/assets/images/insta_icon.png"></a></div>
+      <div><a href="https://www.etsy.com/shop/ngkawaiicrafts/"><img src="/assets/images/etsy_icon.png" alt="Etsy shop"></a></div>
+      <div><a href="https://www.instagram.com/ngkawaiicrafts/"><img src="/assets/images/insta_icon.png" alt="Instagram"></a></div>
     </nav>
     <section>
       {{ content }}
