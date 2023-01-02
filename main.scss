@@ -14,7 +14,22 @@ nav, section, footer {
 }
 
 nav img {
-    height: 60px;
+    max-height: 60px;
+    max-width: 100%;
+}
+
+nav {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+nav > div {
+    flex: 1 1 auto;
+}
+
+#nav-filler {
+    flex: 20 1 auto;
+    min-width: 2em;
 }
 
 .gallery img {
@@ -80,11 +95,6 @@ img.top-align {
     object-fit: scale-down;
     height: 100%;
     width: 100%;
-}
-
-nav > span {
-    display: block;
-    float: right;
 }
 
 .moving {

@@ -19,20 +19,23 @@
       </div>
     </div>
     <nav>
-      {% if page.title == "Drawings" %}
-      <img src="/assets/images/draw_icon.png">
-      {% else %}
-      <a href="/"><img src="/assets/images/draw_icon.png"></a>
-      {% endif %}
-      {% if page.title == "Sculptures" %}
-      <img src="/assets/images/sculpt_icon.png">
-      {% else %}
-      <a href="/sculptures.html"><img src="/assets/images/sculpt_icon.png"></a>
-      {% endif %}
-      <span>
-        <a href="https://www.etsy.com/shop/ngkawaiicrafts/"><img src="/assets/images/etsy_icon.png"></a>
-        <a href="https://www.instagram.com/ngkawaiicrafts/"><img src="/assets/images/insta_icon.png"></a>
-      </span>
+      <div>
+        {% if page.title == "Drawings" %}
+        <img src="/assets/images/draw_icon.png">
+        {% else %}
+        <a href="/"><img src="/assets/images/draw_icon.png"></a>
+        {% endif %}
+      </div>
+      <div>
+        {% if page.title == "Sculptures" %}
+        <img src="/assets/images/sculpt_icon.png">
+        {% else %}
+        <a href="/sculptures.html"><img src="/assets/images/sculpt_icon.png"></a>
+        {% endif %}
+      </div>
+      <div id="nav-filler"></div>
+      <div><a href="https://www.etsy.com/shop/ngkawaiicrafts/"><img src="/assets/images/etsy_icon.png"></a></div>
+      <div><a href="https://www.instagram.com/ngkawaiicrafts/"><img src="/assets/images/insta_icon.png"></a></div>
     </nav>
     <section>
       {{ content }}
