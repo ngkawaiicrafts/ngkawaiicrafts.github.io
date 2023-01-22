@@ -34,6 +34,13 @@
         {% endif %}
       </div>
       <div>
+        {% if page.title == "Lampwork" %}
+        <img src="/assets/images/lampwork_icon.png" alt="Lampwork">
+        {% else %}
+        <a href="/lampwork.html"><img src="/assets/images/lampwork_icon.png" alt="Lampwork"></a>
+        {% endif %}
+      </div>
+      <div>
         {% if page.title == "About" %}
         <img src="/assets/images/about_icon.png" alt="About">
         {% else %}

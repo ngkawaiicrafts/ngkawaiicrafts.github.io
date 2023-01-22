@@ -47,3 +47,5 @@ collections_dir: collections
 collections:
   - drawings
   - sculptures
+  - lampwork
+  
