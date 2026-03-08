@@ -3,6 +3,60 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }} | NG Kawaii Crafts</title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% elsif site.description %}
+    <meta name="description" content="{{ site.description }}">
+    {% endif %}
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{% if page.og_type %}{{ page.og_type }}{% else %}website{% endif %}">
+    <meta property="og:site_name" content="NG Kawaii Crafts">
+    <meta property="og:title" content="{{ page.title }} | NG Kawaii Crafts">
+    {% if page.description %}
+    <meta property="og:description" content="{{ page.description }}">
+    {% elsif site.description %}
+    <meta property="og:description" content="{{ site.description }}">
+    {% endif %}
+    {% if page.og_image %}
+    <meta property="og:image" content="{{ site.url }}{{ page.og_image }}">
+    {% endif %}
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page.title }} | NG Kawaii Crafts">
+    {% if page.description %}
+    <meta name="twitter:description" content="{{ page.description }}">
+    {% elsif site.description %}
+    <meta name="twitter:description" content="{{ site.description }}">
+    {% endif %}
+    {% if page.og_image %}
+    <meta name="twitter:image" content="{{ site.url }}{{ page.og_image }}">
+    {% endif %}
+    
+    <!-- JSON-LD Structured Data -->
+    {% if page.layout == 'gallery' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "{{ page.title }}",
+      "description": "{{ page.description }}",
+      "url": "{{ site.url }}{{ page.url }}",
+      "creator": {
+        "@type": "Person",
+        "name": "NG Kawaii Crafts"
+      },
+      "mainEntity": {
+        "@type": "ImageGallery",
+        "name": "{{ page.title }} Gallery",
+        "description": "{{ page.description }}"
+      }
+    }
+    </script>
+    {% endif %}
+    
     <link rel="stylesheet" href="/main.css">
     <script src="/assets/js/main.js" ></script>
   </head>

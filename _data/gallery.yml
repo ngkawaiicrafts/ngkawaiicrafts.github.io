@@ -1,0 +1,230 @@
+drawings:
+  "birdcouple":
+    title: "Bird couple"
+    description: "Two birds perched together in a warm, storybook style."
+  "bluebird":
+    title: "Bluebird"
+    description: "A bright bluebird illustration with soft, friendly details."
+  "bluebirdandmushrm":
+    title: "Bluebird and mushroom"
+    description: "A bluebird resting beside a whimsical forest mushroom."
+  "cactus!":
+    title: "Cute cactus"
+    description: "A playful cactus drawing with cozy, desert vibes."
+  "cat":
+    title: "Cat"
+    description: "A gentle cat portrait with expressive eyes."
+  "crazyHareBr":
+    title: "Crazy hare"
+    description: "A lively hare with energetic, quirky character."
+  "fox":
+    title: "Fox"
+    description: "A fox illustration with warm tones and soft lines."
+  "girl_vin3":
+    title: "Girl portrait"
+    description: "A stylized character portrait with a dreamy mood."
+  "harvest":
+    title: "Harvest scene"
+    description: "A cozy autumn-themed illustration with harvest motifs."
+  "koala":
+    title: "Koala"
+    description: "A sweet koala drawing in a calm, friendly pose."
+  "Krokodilkirya":
+    title: "Krokodil Kirya"
+    description: "A charming crocodile character named Kirya."
+  "moonnight1":
+    title: "Moon night"
+    description: "A moonlit illustration with soft night-sky tones."
+  "moth":
+    title: "Moth"
+    description: "A delicate moth drawing with fine line details."
+  "murkacow":
+    title: "Murka cow"
+    description: "A cute cow character with gentle, playful styling."
+  "nest":
+    title: "Nest"
+    description: "A cozy nest scene with a quiet, natural feel."
+  "parrot":
+    title: "Parrot"
+    description: "A colorful parrot illustration with bold accents."
+  "sharkrider":
+    title: "Shark rider"
+    description: "A whimsical character riding a friendly shark."
+  "snow_cardinal":
+    title: "Snow cardinal"
+    description: "A bright cardinal in a snowy, winter setting."
+  "yozhik":
+    title: "Yozhik hedgehog"
+    description: "A hedgehog character with a cozy, storybook look."
+
+lampwork:
+  "PXL_20230106_233835775-01":
+    title: "Lampwork glass piece 233835775-01"
+    description: "Handmade lampwork glass piece with a glossy finish."
+  "PXL_20230106_233910220-01":
+    title: "Lampwork glass piece 233910220-01"
+    description: "Colorful lampwork glass with clean, rounded shapes."
+  "PXL_20230106_233923673-01":
+    title: "Lampwork glass piece 233923673-01"
+    description: "Handmade glass piece formed with a torch and kiln."
+  "PXL_20230106_234018827-02":
+    title: "Lampwork glass piece 234018827-02"
+    description: "A glossy lampwork piece with smooth contours."
+  "PXL_20230106_234037233-01":
+    title: "Lampwork glass piece 234037233-01"
+    description: "Handmade lampwork bead with bright color accents."
+  "PXL_20230106_234049255-01":
+    title: "Lampwork glass piece 234049255-01"
+    description: "Torch-worked glass with a clear, polished finish."
+  "PXL_20230106_234100297-02":
+    title: "Lampwork glass piece 234100297-02"
+    description: "A small lampwork sculpture with glossy highlights."
+  "PXL_20230106_234108922-02":
+    title: "Lampwork glass piece 234108922-02"
+    description: "Handmade glass piece with smooth, rounded forms."
+  "PXL_20230106_234119529-02":
+    title: "Lampwork glass piece 234119529-02"
+    description: "Lampwork glass bead with rich, saturated color."
+  "PXL_20230106_234133523-01":
+    title: "Lampwork glass piece 234133523-01"
+    description: "Torch-worked glass with a glossy surface."
+  "PXL_20230106_234145835-01":
+    title: "Lampwork glass piece 234145835-01"
+    description: "Handmade lampwork bead with soft color transitions."
+  "PXL_20230106_234200892-01":
+    title: "Lampwork glass piece 234200892-01"
+    description: "A small lampwork piece with a clean, bright finish."
+  "PXL_20230106_234211338-01":
+    title: "Lampwork glass piece 234211338-01"
+    description: "Lampwork glass with smooth curves and gloss."
+  "PXL_20230106_234222986-01":
+    title: "Lampwork glass piece 234222986-01"
+    description: "Handmade glass piece with tidy, rounded edges."
+  "PXL_20230106_234248155-01":
+    title: "Lampwork glass piece 234248155-01"
+    description: "A torch-worked bead with a shiny finish."
+  "PXL_20230106_234259206-01":
+    title: "Lampwork glass piece 234259206-01"
+    description: "Lampwork glass with clear polish and color depth."
+  "PXL_20230106_234320428-01":
+    title: "Lampwork glass piece 234320428-01"
+    description: "A small handmade glass sculpture with gloss."
+  "PXL_20230106_234331931-01":
+    title: "Lampwork glass piece 234331931-01"
+    description: "Torch-worked glass with a bright, smooth surface."
+  "PXL_20230106_234345455-01":
+    title: "Lampwork glass piece 234345455-01"
+    description: "Lampwork bead with polished contours and shine."
+  "PXL_20230106_234356142-01":
+    title: "Lampwork glass piece 234356142-01"
+    description: "A glossy lampwork piece with clean shaping."
+  "PXL_20230106_234405823-01":
+    title: "Lampwork glass piece 234405823-01"
+    description: "Handmade glass bead with smooth surface polish."
+  "PXL_20230106_234417699-01":
+    title: "Lampwork glass piece 234417699-01"
+    description: "Lampwork glass piece formed by hand and flame."
+  "PXL_20230106_234439637-01":
+    title: "Lampwork glass piece 234439637-01"
+    description: "A glossy lampwork bead with bright color."
+  "PXL_20230106_234451456-01":
+    title: "Lampwork glass piece 234451456-01"
+    description: "Torch-worked glass with a smooth, shiny finish."
+  "PXL_20230106_234505172-01":
+    title: "Lampwork glass piece 234505172-01"
+    description: "Handmade lampwork bead with gentle color tones."
+  "PXL_20230106_234518177-01":
+    title: "Lampwork glass piece 234518177-01"
+    description: "Small lampwork sculpture with clear gloss."
+  "PXL_20230106_234526225-01":
+    title: "Lampwork glass piece 234526225-01"
+    description: "Handmade glass piece with polished contours."
+  "PXL_20230106_234548141-01":
+    title: "Lampwork glass piece 234548141-01"
+    description: "Lampwork bead with smooth curves and shine."
+  "PXL_20230106_234559428-01":
+    title: "Lampwork glass piece 234559428-01"
+    description: "A glossy lampwork glass piece shaped by hand."
+  "PXL_20230106_234609416-01":
+    title: "Lampwork glass piece 234609416-01"
+    description: "Handmade lampwork bead with bright finish."
+  "PXL_20230106_234636529-01":
+    title: "Lampwork glass piece 234636529-01"
+    description: "Torch-worked glass with a clean, glossy surface."
+  "PXL_20230106_234646461-01":
+    title: "Lampwork glass piece 234646461-01"
+    description: "Lampwork glass with polished edges and shine."
+  "PXL_20230106_234655711-01":
+    title: "Lampwork glass piece 234655711-01"
+    description: "A small lampwork bead with smooth polish."
+  "PXL_20230106_234720959-01":
+    title: "Lampwork glass piece 234720959-01"
+    description: "Handmade glass with glossy, rounded forms."
+  "PXL_20230106_234730614-01":
+    title: "Lampwork glass piece 234730614-01"
+    description: "Lampwork bead with clean shaping and gloss."
+
+sculptures:
+  "00100dPORTRAIT_00100_BURST20200426141224419_COVER-01":
+    title: "Character portrait sculpture"
+    description: "A handmade character sculpture with expressive detail."
+  "FB_IMG_1532072542176":
+    title: "Sculpted character"
+    description: "A small handmade sculpture with a playful look."
+  "glowingscull":
+    title: "Glowing skull"
+    description: "A stylized skull sculpture with a glowing effect."
+  "IMG_2089":
+    title: "Sculpture 2089"
+    description: "Handmade character sculpture with clean surfaces."
+  "IMG_2142":
+    title: "Sculpture 2142"
+    description: "A small sculpture featuring cute, rounded forms."
+  "IMG_2144":
+    title: "Sculpture 2144"
+    description: "A handmade figure with expressive details."
+  "IMG_8577":
+    title: "Sculpture 8577"
+    description: "A character sculpture with a playful pose."
+  "IMG_8617":
+    title: "Sculpture 8617"
+    description: "Handmade figure with soft, rounded styling."
+  "IMG_9077":
+    title: "Sculpture 9077"
+    description: "A small sculpture with warm, friendly character."
+  "IMG_9097":
+    title: "Sculpture 9097"
+    description: "A cute character sculpture with bright details."
+  "IMG_9138":
+    title: "Sculpture 9138"
+    description: "A handmade miniature with a whimsical vibe."
+  "IMG_9325":
+    title: "Sculpture 9325"
+    description: "A compact sculpture with clean, smooth forms."
+  "IMG_9332":
+    title: "Sculpture 9332"
+    description: "A small handmade figure with gentle expression."
+  "IMG_9435":
+    title: "Sculpture 9435"
+    description: "A whimsical sculpture with soft character lines."
+  "NataliiaGrigoreva_2facedPumpkin_PolymerClay_3inTall_150":
+    title: "Two-faced pumpkin"
+    description: "Polymer clay pumpkin sculpture, about 3 inches tall."
+  "NataliiaGrigoreva_2facedSquash2_Polymerclay_6-5in_150each":
+    title: "Two-faced squash"
+    description: "Polymer clay squash sculpture with expressive faces."
+  "NataliiaGrigoreva_2facedSquashes_PolymerClay_6-5in_150each":
+    title: "Two-faced squashes"
+    description: "A set of expressive polymer clay squash sculptures."
+  "NataliiaGrigoreva_CyclopesPumpkin_PolymerClay_4inTall_135":
+    title: "Cyclops pumpkin"
+    description: "Polymer clay pumpkin sculpture with a single eye."
+  "NataliiaGrigoreva_greenPumpkin_PolymerClay_4in_135":
+    title: "Green pumpkin"
+    description: "Polymer clay pumpkin sculpture in a rich green tone."
+  "NataliiaGrigoreva_grumpySquash_polymerClay_5in_135":
+    title: "Grumpy squash"
+    description: "A grumpy squash sculpture in polymer clay."
+  "NataliiaGrigoreva_smilingCreepyPumpkin_PolymerClay_12cm_135":
+    title: "Smiling creepy pumpkin"
+    description: "Polymer clay pumpkin sculpture with a playful grin."

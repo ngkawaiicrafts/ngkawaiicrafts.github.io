@@ -1,6 +1,10 @@
 ---
 layout: gallery
 title: Sculptures
+subtitle: "Cute character sculptures in clay and mixed media"
+description: "A gallery of handmade sculptures by NG Kawaii Crafts, featuring expressive characters, animals, and fantasy-inspired miniatures. Click any piece to view details and larger images."
+og_type: "website"
+og_image: "/assets/images/banner_smaller.png"
 ---
 {% assign name = "sculptures" %}
 {% assign c = site.collections | where: "label", name | first %}
@@ -9,9 +13,15 @@ title: Sculptures
 {% capture original %}assets/{{ name }}/{{ f.basename }}/original{{ f.extname }}{% endcapture %}
 {% capture preview %}assets/{{ name }}/{{ f.basename }}/1280{{ f.extname }}{% endcapture %}
 {% assign fd = page.file_data | where: 'name', preview | first %}
+{% assign gallery = site.data.gallery[name] %}
+{% assign item = gallery[f.basename] %}
+{% assign alt_base = f.basename | replace: '_', ' ' | replace: '-', ' ' | replace: '!', '' %}
+{% assign alt = alt_base | strip | capitalize %}
+{% assign item_title = item.title | default: alt %}
+{% assign item_description = item.description %}
 <li class="gallery-item">
   <div>
   </div>
-  <img src="/{{ path }}" data-base="/assets/{{ name }}/{{ f.basename }}" data-extension="{{ f.extname }}" data-original="/{{ original }}" data-width="{{ fd.width }}" data-height="{{ fd.height }}" />
+  <img src="/{{ path }}" data-base="/assets/{{ name }}/{{ f.basename }}" data-extension="{{ f.extname }}" data-original="/{{ original }}" data-width="{{ fd.width }}" data-height="{{ fd.height }}" alt="{{ page.title }} - {{ item_title }}" title="{{ item_title }}{% if item_description %}: {{ item_description }}{% endif %}" />
 </li>
 {% endfor %}
