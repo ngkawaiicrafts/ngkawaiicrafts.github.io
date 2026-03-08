@@ -1,5 +1,8 @@
 source "https://rubygems.org"
 
+# Required for Ruby 3.4+
+gem "bigdecimal"
+
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
 # file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
@@ -10,10 +13,7 @@ source "https://rubygems.org"
 # Happy Jekylling!
 #gem "jekyll", "~> 3.9.0"
 
-gem "github-pages", "~> 231", group: :jekyll_plugins
-
-# This is the default theme for new Jekyll sites. You may change this to anything you like.
-gem "minima", "~> 2.5.1"
+gem "github-pages", "~> 232", group: :jekyll_plugins
 
 # If you want to use GitHub Pages, remove the "gem "jekyll"" above and
 # uncomment the line below. To upgrade, run `bundle update github-pages`.
@@ -32,10 +32,10 @@ install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
 end
 
 # Performance-booster for watching directories on Windows
-gem "wdm", "~> 0.1.0", :install_if => Gem.win_platform?
+gem "wdm", "~> 0.2.0", :install_if => Gem.win_platform?
 
 # kramdown v2 ships without the gfm parser by default. If you're using
 # kramdown v1, comment out this line.
 gem "kramdown-parser-gfm"
 
-gem 'rmagick', '~> 5.0'
+gem 'rmagick', '~> 6.2'
